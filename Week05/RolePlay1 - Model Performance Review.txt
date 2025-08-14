@@ -1,0 +1,50 @@
+Scenario
+You’re a junior machine learning engineer presenting the evaluation results of a classification model to a product owner and business analyst. While you’ve achieved 90% accuracy, you know that precision, recall, and F1-score offer a more nuanced view—especially given the class imbalance in the dataset. The product team insists that accuracy is sufficient for launch. Your task is to clearly explain the limitations of accuracy, make a case for using more comprehensive evaluation metrics, and build consensus on how to interpret model results responsibly.
+
+Rachel is goal-oriented and deadline-driven. She's focused on feature rollout timelines and user impact. She’s comfortable with metrics but expects them to directly support business decisions. She may get impatient with overly technical language but responds well to metaphors and risk framing.
+
+My goals are:
+1. Explain precision, recall, and F1-score using simple analogies
+2. Show how relying solely on accuracy could mislead the team
+3. Reframe the conversation around real-world impact (e.g., false positives/negatives)
+4. Gain consensus to monitor additional metrics before deployment
+5. Demonstrate confidence and clarity when communicating with non-technical stakeholders
+
+-----------
+
+Here's Rachel's first comment:
+"So the model’s at 90% accuracy—why are we even discussing other metrics? Isn’t that good enough to ship?"
+
+---
+
+"I get why 90% accuracy sounds great—it’s like saying a security guard catches 9 out of 10 intruders. But if almost everyone entering is safe, you could ‘score’ high just by waving everyone through. That’s why we also check **precision**—how often we’re right when we say something’s a threat—and **recall**—how often we actually catch the threats. The **F1-score** balances those two. If we skip these, we risk missing critical errors that directly affect users, even if the headline number looks strong."
+
+---
+
+Rachel's comment:
+"Okay, that makes sense. You're saying accuracy alone can give us a misleading picture if most of the data is safe or non-threatening. But how do we know precision and recall are the right metrics for this model? What’s the specific risk if we ignore these and just go with what we have?"
+
+---
+
+"Exactly. In our case, the dataset is unbalanced—most examples belong to the ‘safe’ class. That means accuracy could stay high even if the model misses a lot of the risky cases.
+
+**If we ignore precision:** we might flag too many safe items as risky, frustrating users and slowing them down.
+**If we ignore recall:** we might miss risky cases entirely, which could harm users and damage trust.
+
+Precision and recall tell us *how well* we’re catching the right things and *how often* we’re missing them—directly tied to user impact and business risk. Without them, we can’t see whether that 90% accuracy is actually protecting users or just looking good on paper."
+
+---
+
+Rachel's comment:
+"Got it, so you're saying that by focusing on just accuracy, we might ship a model that's either too passive—missing critical risky cases—or too aggressive, frustrating users with unnecessary flags. It really sounds like monitoring precision, recall, and F1-score could give us a much clearer picture of how the model actually performs in real-world use. What's the plan to include these metrics in our evaluation?"
+
+---
+
+"Exactly—that’s the right takeaway. My plan is:
+
+1. **Baseline Now:** We’ll calculate precision, recall, and F1-score alongside accuracy for the current model so we have a complete performance snapshot before launch.
+2. **Set Targets:** With you and the team, we’ll agree on acceptable thresholds for each metric, balancing user safety and experience.
+3. **Ongoing Monitoring:** After deployment, we’ll track these metrics continuously to spot shifts in performance early.
+4. **Feedback Loop:** If precision or recall drops below target, we’ll retrain or adjust the model before the impact becomes significant.
+
+

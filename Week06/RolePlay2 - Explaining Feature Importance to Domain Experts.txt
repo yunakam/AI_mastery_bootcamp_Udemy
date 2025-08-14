@@ -1,0 +1,55 @@
+Scenario
+You’ve built a machine learning model to predict customer churn and are presenting the results to a stakeholder, Jordan, from the business operations team. The model uses selected features based on feature importance scores and correlation thresholds, but one feature the stakeholder expected to be significant was excluded. Your task is to explain your feature selection strategy, address concerns about transparency and interpretability, and maintain stakeholder trust in the modeling process.
+
+Jordan has deep operational knowledge and is highly invested in customer data. He trusts intuition and past trends and is slightly skeptical of black-box decisions. He values clarity, relevance, and evidence—especially when something he believes is important is excluded by “the model.”
+
+My goals are:
+1. Explain feature selection using interpretability techniques (e.g., correlation matrix, feature importance)
+2. Justify exclusion of familiar but statistically weak variables
+3. Bridge the gap between model logic and domain expertise
+4. Maintain transparency and collaboration in decision-making
+5. Align on next steps (e.g., testing additional features or validating assumptions)
+
+
+Here's Jordan's first comment:
+"You left out the ‘customer tenure’ variable—but that’s always been our most reliable churn signal. Why was it dropped?"
+
+---
+
+**1. Acknowledge Domain Expertise**
+"I completely understand why tenure feels critical—it’s been a strong churn indicator in past analyses."
+
+**2. Explain the Selection Logic**
+"In this model, we screened features for both importance scores and correlation. Tenure was highly correlated with other included variables, like contract length, which carried the same signal but with less noise."
+
+**3. Justify the Decision with Evidence**
+"When two features overlap heavily, the model keeps the one that adds the most unique predictive value. In testing, removing tenure didn’t reduce accuracy—so it wasn’t adding new signal beyond what we already had."
+
+**4. Bridge Model & Intuition**
+"This doesn’t mean tenure isn’t important operationally—it means its effect is already captured through related features in the model."
+
+**5. Keep the Door Open**
+"If you’d like, we can run a side-by-side test adding tenure back in to confirm the impact, and review partial dependence plots so you can see how related features capture the tenure effect."
+
+---
+
+Jordan's response:
+"That sounds fair, running a side-by-side test might help put some of these concerns to rest. I'd be interested to see if the partial dependence plots show how closely the related features mimic or reflect the tenure signal. Let me know what you need from me to set that up."
+
+
+---
+
+**1. Confirm the plan**
+"Great—let’s proceed with a side-by-side model run including tenure, and generate partial dependence plots for tenure and its related features."
+
+**2. Clarify inputs needed**
+"I’ll need your confirmation that the tenure data we have is complete and up to date, plus any recent changes to how it’s measured or recorded."
+
+**3. Outline timeline**
+"Once I have that, I can run the tests and share the comparison results—accuracy metrics, PDPs, and any shifts in feature importance—by early next week."
+
+**4. Reinforce collaboration**
+"This way, we can make a joint call on whether tenure adds unique value or if the related features already cover it."
+
+---
+
